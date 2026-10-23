@@ -23,7 +23,7 @@
         <nav class="nav container">
             <a href="#home" class="nav__logo">
                 <img src="assets/img/png-clipart-round-orange-and-white-logo-illustration-analytics-big-data-data-science-data-analysis-data-analytic-icon-m.png" alt="img" class="header__img" />
-                <span class="nav__logo-name">Richard Oluoch</span>
+                <span>Richard Oluoch</span>
             </a>
 
             <div class="nav__menu" id="nav-menu">
@@ -178,9 +178,6 @@
                             <b>Python</b>
                         </li>
                         <li>
-                            <b>SQL</b>
-                        </li>
-                        <li>
                             <b>Excel</b>
                         </li>
                     </ul>
@@ -274,18 +271,14 @@
 
           <article class="projects__card">
             <div class="projects__image">
-              <img
-                src="assets/img/covid.jpg"
-                alt="image"
-                class="projects__img"
-              />
+              <img src="assets/img/covid.jpg" alt="image" class="projects__img"/>
 
               <a href="#" class="projects__button button">
                 <i class="ri-arrow-right-up-line"></i>
               </a>
                     </div>
                     <div class="projects__content">
-                        <h3 class="projects__subtitle">App</h3>
+                        <h3 class="projects__subtitle">Data Anaysis</h3>
                         <h2 class="projects__title">Data Exploration in SQL</h2>
                         <p class="projects__description">
                             Data Exploration of the Covid 19 Dataset in SQL Server.
@@ -312,7 +305,7 @@
               </a>
                     </div>
                     <div class="projects__content">
-                        <h3 class="projects__subtitle">App</h3>
+                        <h3 class="projects__subtitle">Research</h3>
                         <h2 class="projects__title">Youth Unemployment Analysis</h2>
                         <p class="projects__description">
                             Analysis of youth unemployment data using Tableau.
@@ -405,12 +398,10 @@
               <span>Contact Me.</span>
             </h2>
             <p class="contact__description-1">
-              I will read all emails. Send me any message you want and I'll get
-              back to you.
+              Have a project that you'd like help with? Just want to chat?
             </p>
             <p class="contact__description-2">
-              I need your <b>Name</b> and <b>Email Address</b>, but you won't
-              receive anything other than your reply.
+              Leave me a message below and I'll get in touch within <b>24 hours</b>.
             </p>
             <div class="geometric-box"></div>
           </div>
@@ -419,53 +410,57 @@
 
             <form action="" class="contact__form" id="contact-form">
               <div class="contact__group">
+                <!-- First Name -->
                 <div class="contact__box">
-                  <input
-                    type="text"
-                    name="user_name"
-                    class="contact__input"
-                    id="name"
-                    required
-                    placeholder="First Name"
-                  />
-                  <label for="name" class="contact__label">First Name</label>
+                    <input
+                        type="text"
+                        name="user_name"
+                        class="contact__input"
+                        id="name"
+                        required
+                        placeholder="First Name"
+                    />
+                    <label for="name" class="contact__label">First Name</label>
                 </div>
 
+                 <!-- Email Address -->
                 <div class="contact__box">
-                  <input
-                    type="email"
-                    name="user_email"
-                    class="contact__input"
-                    id="email"
-                    required
-                    placeholder="Email Address"
-                  />
-                  <label for="email" class="contact__label"
-                    >Email Address</label
-                  >
+                    <input
+                        type="email"
+                        name="user_email"
+                        class="contact__input"
+                        id="email"
+                        required
+                        placeholder="Email Address"
+                    />
+                    <label for="email" class="contact__label"
+                        >Email Address</label
+                    >
                 </div>
 
-                <div class="contact__box">
-                  <input
-                    type="text"
-                    name="user_subject"
-                    class="contact__input"
-                    id="subject"
-                    required
-                    placeholder="Subject"
-                  />
-                  <label for="subject" class="contact__label">Subject</label>
+                <!-- Subject: full width -->
+                <div class="contact__box contact__box--full">
+                    <input
+                        type="text"
+                        name="user_subject"
+                        class="contact__input"
+                        id="subject"
+                        required
+                        placeholder="Subject"
+                    />
+                    <label for="subject" class="contact__label">Subject</label>
                 </div>
 
-                <div class="contact__box contact__area">
-                  <textarea
-                    name="user_message"
-                    id="message"
-                    class="contact__input"
-                    required
-                    placeholder="Message"
-                  ></textarea>
-                  <label for="message" class="contact__label">Message</label>
+                <!-- Message: full width below Subject -->
+                <div class="contact__box contact__area contact__box--full">
+                    <textarea
+                        name="user_message"
+                        id="message"
+                        class="contact__input"
+                        required
+                        placeholder="Message"
+                    ></textarea>
+                    <label for="message" class="contact__label">Message</label>
                 </div>
 
                 <p class="contact__message" id="contact-message"></p>
@@ -502,24 +497,51 @@
     <!--==================== FOOTER ====================-->
     <footer class="footer">
         <div class="footer__container container grid">
-            <ul class="footer__links">
-                <li>
-                    <a href="#home" class="footer__link">Home</a>
-                </li>
 
-                <li>
-                    <a href="#about" class="footer__link">About</a>
-                </li>
+            <div class="footer__content">
+                
+                
+                <div class="footer__left footer__info">
+                        <h3 class="footer__name">Richard Oluoch</h3>
+                        <p class="footer__subtitle">Data Analyst | Software Developer</p>
+                        <p class="footer__description">
+                            Turning data into insights and ideas into code.
+                        </p>
+                </div>
 
-                <li>
-                    <a href="#projects" class="footer__link">Projects</a>
-                </li>
-            </ul>
 
-            <span class="footer__copy">
-              &#169; All Rights Reserved By 
-              <a href="#">Richard Oluoch.</a>
-            </span>
+
+                <div class="footer__middle">
+                    <h3 class="footer__name">GET IN TOUCH</h3>
+                    <ul class="footer__links">
+                        <li>
+                            <i class="ri-map-pin-line"></i>
+                            <p class="footer__subtitle">Mombasa, Kenya</p>
+                        </li>
+
+                        <li>
+                            <i class="ri-mail-line"></i>
+                            <p class="footer__subtitle">Available on request</p>
+                        </li>
+
+                        <li>
+                            <i class="ri-phone-line"></i>
+                            <p class="footer__subtitle">(+254) 743 18 9702</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__right">
+                    <a href="assets/cv/Richard_Oluoch_CV.pdf" class="button" download="Richard_Oluoch_CV.pdf">
+                    <i class="ri-download-line"></i>Download My CV</a>
+                </div>
+            </div>
+
+            <div class="footer__copyright">
+                    <p>&copy; 2026 Richard Oluoch. All rights reserved.</p>
+                    <span>DATA / CODE / IMPACT</span>
+            </div>
+
         </div>
     </footer>
 
