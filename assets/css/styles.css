@@ -938,10 +938,15 @@ body.dark-theme {
     text-align: center;
 }
 
-.contact__form,
-.contact__group {
+.contact__form {
     display: grid;
     row-gap: 1.25rem;
+}
+
+.contact__group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 1rem;
 }
 
 .contact__form {
@@ -966,12 +971,26 @@ body.dark-theme {
     position: absolute;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
     background-color: var(--black-color);
     border: 3px solid var(--black-color-light);
     color: var(--white-color);
     padding: .5rem 1rem;
     font-weight: var(--font-medium);
     transition: border .4s, background-color .4s;
+}
+
+/* Subject and Message span both columns */
+.contact__box--full {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Make fields fill their grid cells */
+.contact__box {
+    width: 100%;
+    min-width: 0;
 }
 
 .contact__input::placeholder {
@@ -1091,6 +1110,7 @@ body.dark-theme {
 }
 
 
+
 /*=============== FOOTER ===============*/
 
 .footer {
@@ -1102,10 +1122,111 @@ body.dark-theme {
     row-gap: 2.5rem;
 }
 
+.footer__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.footer__left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer__logo-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.footer__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+}
+
+.footer__name {
+    margin: 0;
+    color: var(--first-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.footer__subtitle {
+    margin: 0;
+    color: var(--white-color);
+    font-size: 1rem;
+}
+
+.footer__description {
+    margin: 0;
+    color: var(--white-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 .footer__links {
     display: flex;
-    justify-content: center;
-    column-gap: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    /* gap: .5rem; */
+}
+
+.footer__right {
+    margin-right: 0;
+    justify-self: end;
+}
+
+.footer__middle {
+    margin-right: 0;
+    justify-self: center;
+}
+
+.footer__links h5 {
+    color: var(--white-color);
+    margin-bottom: .5rem;
+}
+
+.footer__links li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    line-height: 1.5;
+}
+
+.footer__links i {
+    color: var(--first-color);
+    font-size: 1.1rem;
+}
+
+.footer__logo {
+    display: flex;
+    column-gap: .5rem;
+    align-items: center;
+    font-weight: var(--font-semi-bold);
+    color: var(--white-color);
+    font-family: var(--font-technical);
+}
+
+.footer__copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid var(--first-color);
+    padding-top: 22px;
+}
+
+.footer__copyright p,
+.footer__copyright span {
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+    margin: 0;
 }
 
 .footer__link {
@@ -1114,7 +1235,7 @@ body.dark-theme {
 }
 
 .footer__link:hover {
-    color: var(--text-color-light);
+    color: var(--first-color);
 }
 
 .footer__copy {
@@ -1127,7 +1248,6 @@ body.dark-theme {
     color: var(--white-color);
     font-weight: var(--font-medium);
 }
-
 
 /*=============== SCROLL BAR ===============*/
 
@@ -1159,7 +1279,7 @@ body.dark-theme {
     font-size: 1.25rem;
     color: var(--white-color);
     z-index: var(--z-tooltip);
-    transition: bottom .4s, transform .4s, background-color .4s;
+    transition: bottom .3s, transform .3s, background-color .3s;
 }
 
 .scrollup:hover {
@@ -1199,6 +1319,29 @@ body.dark-theme {
     .contact__data .section__title-2 {
         transform: translateX(0);
     }
+    .footer__left,
+    .footer__middle,
+    .footer__right {
+        gap: 0.3rem;
+    }
+    .footer__name {
+        font-size: 0.7rem;
+    }
+    .footer__subtitle {
+        font-size: 0.55rem;
+    }
+
+    .footer__description {
+        font-size: 0.5rem;
+    }
+    .footer__content {
+        /* grid-template-columns: 200px; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 
@@ -1207,7 +1350,8 @@ body.dark-theme {
 @media screen and (min-width: 576px) {
     .home__container,
     .about__container,
-    .projects__container {
+    .projects__container,
+    .services__container {
         grid-template-columns: 350px;
         justify-content: center;
     }
@@ -1221,8 +1365,11 @@ body.dark-theme {
         justify-content: center;
     }
     .contact__group {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         column-gap: 1rem;
+    }
+    .contact__box--full {
+        grid-column: 1;
     }
     .contact__social {
         background-color: transparent;
@@ -1234,19 +1381,35 @@ body.dark-theme {
         color: var(--text-color);
     }
     .contact__social-description-2 {
-        color: var(--title-color);
+        color: var(--white-color);
     }
     .dark-theme .contact__social-arrow {
         filter: none;
     }
-}
-
-@media screen and (min-width: 768px) {
     .services__container {
         grid-template-columns: repeat(2, 250px);
     }
     .projects__container {
-        grid-template-columns: repeat(2, 350px);
+        grid-template-columns: repeat(2, 250px);
+    }
+    .footer__content {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    .footer__left,
+    .footer__middle,
+    .footer__right {
+        gap: 0.75rem;
+    }
+    .footer__name {
+        font-size: 1.2rem;
+    }
+    .footer__subtitle {
+        font-size: 0.75rem;
+    }
+
+    .footer__description {
+        font-size: 0.8rem;
     }
 }
 
@@ -1565,17 +1728,27 @@ body.dark-theme {
     .dark-theme .contact__data {
         box-shadow: 4px 0 8px hsla(0, 0%, 4%, .3);
     }
-    .footer__container {
-        padding-block: 4rem;
-        grid-template-columns: repeat(2, max-content);
-        justify-content: space-between;
-    }
+    
     .footer__links {
         column-gap: 3rem;
         order: 1;
+    }
+    .footer__left,
+    .footer__middle,
+    .footer__right {
+        gap: 0.75rem;
+    }
+    .footer__name {
+        font-size: 1.5rem;
+    }
+    .footer__subtitle {
+        font-size: 0.9rem;
+    }
+
+    .footer__description {
+        font-size: 1rem;
     }
     .scrollup {
         right: 3rem;
     }
 }
-/* richard oluoch */
