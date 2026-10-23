@@ -1124,7 +1124,6 @@ body.dark-theme {
 
 .footer__content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
 }
 
@@ -1304,14 +1303,17 @@ body.dark-theme {
         margin-inline: 1rem;
     }
     .home__image {
-        width: 180px;
+        width: 200px;
     }
     .about__image {
-        width: 180px;
+        width: 200px;
     }
     .about__shadow {
-        height: 260px;
+        height: 282px;
         right: -2.5rem;
+    }
+    .contact__container .contact__button {
+        width: 282px;
     }
     .contact__data {
         width: 100%;
@@ -1319,29 +1321,26 @@ body.dark-theme {
     .contact__data .section__title-2 {
         transform: translateX(0);
     }
-    .footer__left,
-    .footer__middle,
-    .footer__right {
-        gap: 0.3rem;
-    }
     .footer__name {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
     }
     .footer__subtitle {
-        font-size: 0.55rem;
+        font-size: 0.6rem;
     }
 
     .footer__description {
         font-size: 0.5rem;
     }
     .footer__content {
-        /* grid-template-columns: 200px; */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        grid-template-columns: 200px;
+        justify-self: center;
         align-items: center;
         text-align: center;
     }
+    .services__container {
+        grid-template-columns: repeat(1, 300px);
+    }
+
 }
 
 
